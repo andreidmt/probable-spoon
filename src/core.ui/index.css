@@ -1,0 +1,21 @@
+@import "sanitize.css";
+
+body {
+  color: var(--color-black);
+  background-color: var(--color-white);
+
+  font-family: var(--font-family);
+  font-size: var(--font-size);
+  line-height: var(--line-height);
+}
+
+input,
+textarea {
+  display: block;
+
+  width: 100%;
+  padding: calc(var(--distancer) / 3);
+
+  border: 0;
+  border-radius: var(--border-radius);
+}
