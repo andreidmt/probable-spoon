@@ -12,7 +12,7 @@ const config = {
   entry: "./src/index.tsx",
 
   output: {
-    publicPath: "/",
+    publicPath: "/probable-spoon/",
     path: path.resolve(__dirname, "dist"),
     filename: "js/[name].[contenthash].js",
   },
