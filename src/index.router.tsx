@@ -9,7 +9,7 @@ import { NotFoundPage } from "./page.404/404"
 export const AppRouter: FunctionComponent = () => (
   <BrowserRouter>
     <Switch>
-      <Route path="/" exact={true}>
+      <Route path="/probable-spoon">
         <HomePage />
       </Route>
 
