@@ -23,7 +23,7 @@ export const HomePage: FunctionComponent = () => {
   const [query, setQuery] = useState("")
   const [threshold, setThreshold] = useState(1)
 
-  const frequencyByWordMap = useMemo(
+  const wordFrequencyMap: { [key: string]: number } = useMemo(
     () =>
       pipe(
         trim(" "),
@@ -43,10 +43,10 @@ export const HomePage: FunctionComponent = () => {
     () =>
       pipe(
         toLower,
-        source => read(source, null, frequencyByWordMap),
+        source => read(source, null, wordFrequencyMap),
         when(is, i, same(0))
       )(query),
-    [frequencyByWordMap, query]
+    [wordFrequencyMap, query]
   )
 
   return (
@@ -78,10 +78,7 @@ export const HomePage: FunctionComponent = () => {
         />
       </div>
       <div className={css.cell}>
-        <ResultUI
-          threshold={threshold}
-          frequencyByWordMap={frequencyByWordMap}
-        />
+        <ResultUI threshold={threshold} wordFrequencyMap={wordFrequencyMap} />
       </div>
     </div>
   )

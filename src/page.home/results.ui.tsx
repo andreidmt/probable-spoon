@@ -19,16 +19,16 @@ const joinWords = pipe(
 
 interface ResultUIType {
   threshold?: number;
-  frequencyByWordMap: { [key: string]: number };
+  wordFrequencyMap: { [key: string]: number };
 }
 
-const ResultUI = ({ threshold, frequencyByWordMap }: ResultUIType) => {
-  const wordFrequencyTupleArray = pipe(
+const ResultUI = ({ threshold, wordFrequencyMap }: ResultUIType) => {
+  const wordFrequencyTupleArray: [[string, number]][] = pipe(
     Object.entries,
     sort(([aWord, aFrequency], [bWord, bFrequency]) =>
       aFrequency === bFrequency ? aWord > bWord : aFrequency < bFrequency
     )
-  )(frequencyByWordMap)
+  )(wordFrequencyMap)
 
   const highestFrequency: number = pipe(
     first,
