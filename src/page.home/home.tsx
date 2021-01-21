@@ -60,9 +60,8 @@ export const HomePage: FunctionComponent = () => {
         />
       </div>
       <div className={css.cell}>
-        Top N frequencies:
+        Top N words:
         <input
-          placeholder="Type threshold"
           value={isEmpty(threshold) ? "" : threshold}
           type="number"
           min={1}
