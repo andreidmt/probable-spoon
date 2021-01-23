@@ -1,14 +1,15 @@
 {
   "compilerOptions": {
-    "skipLibCheck": true,
+    "module": "esnext",
     "target": "esnext",
+    "moduleResolution": "node",
+    "skipLibCheck": true,
     "strictNullChecks": true,
     "noEmit": true,
     "jsx": "react",
     "lib": ["es6", "dom"],
-    "module": "commonjs",
     "allowSyntheticDefaultImports": true
   },
-  "include": ["./src"],
+  "include": ["src", "types"],
   "exclude": ["node_modules", "dist"]
 }

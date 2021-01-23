@@ -79,11 +79,11 @@ const config = {
   plugins: [
     new HtmlWebPackPlugin({
       filename: "index.html",
-      template: "./src/index.html",
+      template: "./public/index.html",
     }),
 
     new CopyPlugin({
-      patterns: [{ from: "src/robots.txt", to: "robots.txt" }],
+      patterns: [{ from: "public/robots.txt", to: "robots.txt" }],
     }),
 
     new MiniCssExtractPlugin({
