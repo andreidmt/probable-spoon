@@ -8,7 +8,7 @@ describe("UIDebug", async assert => {
   const $ = render(
     <ResultUI
       threshold={3}
-      frequencyByWordMap={{
+      wordFrequencyMap={{
         lake: 1,
         over: 1,
         shines: 1,
@@ -19,8 +19,8 @@ describe("UIDebug", async assert => {
   )
 
   assert({
-    given: "words object with numeric frequencies",
-    should: "render all",
+    given: "words frequency obj and threshold",
+    should: "render list of top words",
     actual: $("[data-test-id=highest-words]").text(),
     expected: "lake (1), over (1), shines (1)",
   })
